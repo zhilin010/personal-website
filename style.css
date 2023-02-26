@@ -24,7 +24,6 @@ body {
     display: grid;
     place-items: center;
     align-content: center;
-    margin-left: -100px;
 }
 
 .hidden-translate {
