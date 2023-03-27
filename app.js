@@ -17,7 +17,7 @@ const text = document.querySelector(".self-presentation")
 
 const textLoad = () => {
     setTimeout(() => {
-        text.textContent = "My name is Zhi Lin, nice to meet you."
+        text.textContent = "My name is Zhilin, nice to meet you."
     }, 2000);
     setTimeout(() => {
         text.textContent = "I like to make extraordinary websites."
