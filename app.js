@@ -28,3 +28,23 @@ const textLoad = () => {
 }
 
 textLoad();
+
+// show nav bar when scrolling up
+const navBar = document.querySelector(".nav-bar");
+let prevScrollPos = window.pageYOffset;
+let scrollDir = '';
+
+window.addEventListener('scroll', function() {
+    const currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos > prevScrollPos) {
+        scrollDir = 'down';
+        navBar.classList.add('nav-hide');
+    } else {
+        scrollDir = 'up';
+        navBar.classList.remove('nav-hide');
+        navBar.classList.add('nav-show');
+    }
+
+    prevScrollPos = currentScrollPos;
+});
