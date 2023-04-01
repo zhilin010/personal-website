@@ -133,9 +133,11 @@ header {
     margin: 20px 40px;
     top: 0;
     position: fixed;
+    z-index: 999;
     width: 90%;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
+    background-color: rgb(70, 51, 88);
 }
 
 .nav-show {
@@ -201,7 +203,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .proj-box h2 {
@@ -218,4 +220,67 @@ header {
     border-radius: 20px;
     box-shadow: 0px 0px 10px 10px rgba(28, 15, 33, 0.2);
     background-color: rgb(40, 39, 49);
+}
+
+.project-descriptions :nth-child(even of .proj-box) {
+    background-color: rgb(28, 15, 33);
+}
+
+.proj-title-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.proj-title-img a {
+    pointer: cursor;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proj-title-img a:hover {
+    transform: scale(1.1) rotate(10deg);
+    transition: all 0.3s ease;
+}
+
+.proj-title-img img {
+    width: 30px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.proj-date {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(187, 145, 210, 0.6);
+    font-style: italic;
+    margin: 0;
+    line-height: 100%;
+}
+
+.expand-btn { 
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: rgb(187, 145, 210);
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.expand-btn img {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+.expand-btn img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease all;
 }
