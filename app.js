@@ -12,22 +12,6 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden-translate');
 hiddenElements.forEach((el) => observer.observe(el));
 
-// animate "typing" animation 
-const text = document.querySelector(".self-presentation")
-
-const textLoad = () => {
-    setTimeout(() => {
-        text.textContent = "My name is Zhilin, nice to meet you."
-    }, 2000);
-    setTimeout(() => {
-        text.textContent = "I like to make extraordinary websites."
-    }, 8000);
-    setTimeout(() => {
-        text.textContent = "Now, scroll down and enjoy your stay."
-    }, 14000);
-}
-
-textLoad();
 
 // show nav bar when scrolling up
 const navBar = document.querySelector(".nav-bar");
@@ -48,3 +32,11 @@ window.addEventListener('scroll', function() {
 
     prevScrollPos = currentScrollPos;
 });
+
+
+// toggle nav-bar menu
+const navLinks = document.querySelector(".nav-links");
+
+function toggleNavLinks() {
+    navLinks.classList.toggle('active');
+};
