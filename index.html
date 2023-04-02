@@ -10,24 +10,26 @@
     <title>Zhi Lin Li</title>
 </head>
 <body>
-    <header class="nav-bar">
+    <nav class="nav-bar">
         <img class="logo" src="./images/chicgoose.png" alt="logo">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Experience</a></li>
-        </nav>
+        <ul class="nav-links">
+            <li><a href="#home" onclick="toggleNavLinks()">Home</a></li>
+            <li><a href="#about-me" onclick="toggleNavLinks()">About Me</a></li>
+            <li><a href="#projects" onclick="toggleNavLinks()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleNavLinks()">Experience</a></li>
+        </ul>
         <a class="cta" href="#"><button>Contact Me!</button></a>
-    </header>
+        <button class="toggle-btn" onclick="toggleNavLinks()"><img src="/images/sidebar.right@2x.png"></button>
+    </nav>
+    
     <div class="landing-page" id="home">
         <div class="hidden-greeting">
             <h1 class="greeting">
-                <span class="first-txt">Welcome,</span>
-                <span class="second-txt">traveller.</span>
+                <span class="second-txt">hello.</span>
             </h1>
-            <span class="self-presentation">My name is Zhilin, nice to meet you.</span>
+            <h2 class="self-presentation-1">my name is zhilin li.</h2>
+            <h2 class="self-presentation-2">welcome to my website.</h2>
+
         </div>
     </div>
     <section class="hidden-translate bodytxt" id="about-me">

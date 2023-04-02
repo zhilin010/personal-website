@@ -1,18 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @keyframes fadeIn {
     0% {
         opacity: 0;
         filter: blur(5px);
+        visibility: visible;
     }
 
     100% {
         opacity: 1;
         filter: blur(0px);
+        visibility: visible;
     }
 }
 
+
 html {
     scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(28, 34, 34);
+    box-shadow: inset 0 0 5px rgb(28, 34, 34);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(57, 45, 64);
+    border-radius: 20px;
 }
 
 body {
@@ -27,11 +46,10 @@ body {
 .landing-page {
     width: 100%;
     height: 100vh;
-    background: rgb(28,34,34);
-    background: -moz-linear-gradient(0deg, rgba(28,34,34,1) 19%, rgba(78,54,99,1) 100%, rgba(187,145,210,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(28,34,34,1) 19%, rgba(78,54,99,1) 100%, rgba(187,145,210,1) 100%);
-    background: linear-gradient(0deg, rgba(28,34,34,1) 19%, rgba(78,54,99,1) 100%, rgba(187,145,210,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c2222",endColorstr="#bb91d2",GradientType=1);
+    background-image: url('images/landing-page.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .hidden-greeting {
@@ -68,48 +86,29 @@ body {
 
 .greeting {
     opacity: 1;
-    font-size: 98px;
+    font-size: 200px;
     margin-bottom: 0;
-    animation: fadeIn 1.5s ease 0.3s 1;
+    animation: fadeIn 1.5s ease 0.3s 1 forwards;
+    font-family: 'Abel', sans-serif;
+    visibility: hidden;
 }
 
-.greeting .first-txt {
-    color: rgb(187, 145, 210);
+.self-presentation-1 {
+    font-size: 72px;
+    margin: 0;
+    font-family: 'Abel', sans-serif;
+    visibility: hidden;
+    animation: fadeIn 1.5s ease 0.6s 1 forwards;
+    animation-delay: 1s;
 }
 
-.self-presentation {
-    font-size: 48px;
-    position: relative;
+.self-presentation-2 {
+    font-family: 'Abel', sans-serif;
+    font-size: 60px;
+    visibility: hidden;
+    animation: fadeIn 1.5s ease 1.2s 1 forwards;
+    animation-delay: 2.5s;
     margin-top: 20px;
-}
-
-.self-presentation::before { 
-    content: "";
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    animation: animate 6s steps(32) 3 2s;
-    background: rgb(40,39,49);
-    background: -moz-linear-gradient(0deg, rgba(40,39,49,1) 0%, rgba(43,40,53,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(40,39,49,1) 0%, rgba(43,40,53,1) 100%);
-    background: linear-gradient(0deg, rgba(40,39,49,1) 0%, rgba(43,40,53,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#282731",endColorstr="#2b2835",GradientType=1);
-}
-
-@keyframes animate { 
-    0% {
-        border-left: 4px solid rgb(176, 102, 216);
-    }
-    40%, 60% {
-        left: 100%;
-    }
-
-    100% {
-        left: 0%;
-        border-left: 4px solid rgb(176, 102, 216);
-    }
 }
 
 h1 { 
@@ -124,20 +123,24 @@ h1 {
     font-weight: 300;
 }
 
-
-header {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 40px;
-    margin: 20px 40px;
     top: 0;
     position: fixed;
+    width: 100%;
+    height: 80px;
     z-index: 999;
-    width: 90%;
-    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    background-color: rgb(70, 51, 88);
+    background-color: rgb(28, 34, 34);
+}
+
+nav button {
+    margin-right: 20px;
+}
+
+nav img {
+    margin-left: 20px;
 }
 
 .nav-show {
@@ -151,12 +154,14 @@ header {
 }
 
 .nav-links {
-    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links li { 
-    display: inline-block;
     padding: 0 20px;
+    list-style: none;
 }
 
 .nav-links li a {
@@ -165,10 +170,70 @@ header {
     font-size: 24px;
     font-weight: 500;
     transition: all 0.3s ease;
+    display: block;
 }
 
 .nav-links li a:hover {
     color: rgb(187, 145, 210);
+}
+.toggle-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: auto;
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 1rem;
+}
+
+.toggle-btn img {
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    height: auto;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1);
+    transition: 0.3s all ease;
+}
+
+@media (max-width: 818px) {
+    .toggle-btn {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        padding: 0;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        transition: all 0.3s ease;
+        background-color: rgb(28, 34, 34);
+    }
+
+    .nav-links li {
+        padding: 10px;
+    }
+
+    .active {
+        display: flex;
+        transition: all 0.3s ease;
+        transition-property: all;
+    }
+
+    .cta button {
+        display: none;
+    }
+
 }
 
 .cta button {
