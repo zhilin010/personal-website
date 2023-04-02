@@ -1,3 +1,4 @@
+// Scroll slide blur show behaviour
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry)
@@ -11,6 +12,9 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden-translate');
 hiddenElements.forEach((el) => observer.observe(el));
+
+const hiddenElementsY = document.querySelectorAll(".hidden-translate-y");
+hiddenElementsY.forEach((el) => observer.observe(el));
 
 
 // show nav bar when scrolling up
