@@ -324,6 +324,7 @@ nav img {
 
     .bodytxt {
         font-size: 18px;
+        padding: 40px;
     }
     
     .toggle-btn {
@@ -384,7 +385,7 @@ nav img {
     }
 
     .proj-box {
-        width: 100% !important;
+        width: 80% !important;
         margin: 20px 0;
         padding: 20px;
     }
